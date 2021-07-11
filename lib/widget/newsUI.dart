@@ -34,7 +34,11 @@ Widget newsUI(ArticlesAPI articlesAPI, BuildContext context) {
             width: double.infinity,
             decoration: new BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(articlesAPI.urlToImage),
+                image: NetworkImage(
+                  (articlesAPI.urlToImage != null)
+                      ? articlesAPI.urlToImage
+                      : "https://www.thehawk.in/hawkcontent/servlet/RDESController?command=rdm.Picture&sessionId=RDWEBD9ZXBMHEVOZY44KG0ZIGGJKEI9YBQY0U&app=rdes&partner=thehawk&type=7&uid=7fqeTRRcJ4ftYOyw41rbQiUSYivnjIvrF5837497",
+                ),
                 fit: BoxFit.cover,
               ),
               borderRadius: BorderRadius.circular(8.0),
